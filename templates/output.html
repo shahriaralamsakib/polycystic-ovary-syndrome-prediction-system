@@ -1,0 +1,125 @@
+<!--<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title> resultSheet</title>
+
+    <style>
+        body {
+            background-color: skyblue;
+            font: 1em/1.5 sans-seriff;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 50px;
+            color: black;
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 20px;
+            color: black;
+        }
+
+        .wrap {
+            width: 1000px;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .card {
+            box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.6);
+            transition: 0.4s;
+            width: 300px;
+            background: #fff;
+            text-align: center;
+            font-size: 16px;
+            font-family: sans-serif;
+            float: left;
+            margin: 10px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: 2px;
+            outline: none;
+            cursor: pointer;
+            padding: 18px 30px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 3px solid #ccc;
+            border-top: none;
+        }
+    </style>
+</head>
+
+<body>-->
+    {% extends 'base.html' %}
+    {% load static %}
+    {% block main-content %}
+    <div class="tab">
+        <div><a href="{% url 'pcos' %}"><button class="tablinks" onclick="openCity(event, 'Check Again')">Check
+                    Again</button></a></div>
+        <button class="tablinks" onclick="openCity(event, 'Disease Status')">Disease Status</button>
+        <button class="tablinks" onclick="openCity(event, 'User')">User</button>
+        <div>
+            <a href="{% url 'login_view' %}"><button class="tablinks"
+                    onclick="openCity(event, 'Logout')">Logout</button></a>
+
+        </div>
+    </div>
+    <h2>
+        Result of Disease!!
+    </h2>
+
+    {% if result == 0 %}
+    <h2 style="color: green;">
+        PCOS Negative.
+    </h2>
+    {% elif result == 1 %}
+    <h2 style="color: red;">PCOS Positive.</h2>
+    {% else %}
+    <h4>Enter your problem first</h4>
+    {% endif %}
+
+    {% endblock main-content %}
+
+    {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    {% endblock %}
+
+<!--</body>
+
+</html>-->

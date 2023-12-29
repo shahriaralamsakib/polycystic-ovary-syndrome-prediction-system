@@ -1,0 +1,129 @@
+<!--<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Check Disease Form</title>
+</head>
+<style>
+    body {
+        background-color: #e8f3f8;
+        font: 1em/1.5 sans-seriff;
+    }
+    
+    h1 {
+        text-align: center;
+        font-size: 50px;
+        color: steelblue;
+    }
+    
+    form {
+        margin: 18px auto;
+        width: 320px;
+        color: steelblue;
+    }
+    
+    input {
+        padding: 8px;
+        font-size: inherit;
+    }
+    
+    .Age {
+        display: block;
+        margin-bottom: 20px;
+        width: 100%;
+        border: 2px solid steelblue;
+        background-color: #FAF6D9;
+    }
+    
+    input[type="radio"] {
+        margin: 0 8px 25px 18px;
+    }
+    
+    input[type="radio"]:first-child {
+        margin-left: 0;
+    }
+    
+    input[type="submit"] {
+        width: 344px;
+        height: 45px;
+        border: none;
+        background: steelblue;
+        color: white;
+    }
+    
+    input:focus {
+        background: white;
+    }
+    
+    input[type="radio"]:checked+label {
+        font-weight: bold;
+        font-size: 18px;
+    }
+</style>
+
+<body>-->
+    {% extends 'base.html' %}
+    {% load static %}
+    {% block main-content %}
+    <h1>
+        Check Disease!!
+    </h1>
+    <form method="POST" action="{% url 'pcos' %}">
+        {% csrf_token %}
+        <div>
+            <h3>Skin Darkening</h3>
+            <input type="radio" id="skin_d_Y" name="skin_d_Y"><label for="skin_d_Y">Yes</label>
+            <input type="radio" id="skin_d_N" name="skin_d_N"><label for="skin_d_N">No</label>
+        </div>
+        <div>
+            <h3>Hair Growth</h3>
+            <input type="radio" id="hair_g_Y" name="hair_g_Y"><label for="hair_g_Y">Yes</label>
+            <input type="radio" id="hair_g_N" name="hair_g_N"><label for="hair_g_N">No</label>
+        </div>
+        <div>
+            <h3>Weight Gain</h3>
+            <input type="radio" id="weight_Y" name="weight_Y"><label for="weight_Y">Yes</label>
+            <input type="radio" id="weight_N" name="weight_N"><label for="weight_N">No</label>
+        </div>
+        <div>
+            <h3>Fast Food</h3>
+            <input type="radio" id="fastFood_Y" name="fastFood_Y"><label for="fastFood_Y">Yes</label>
+            <input type="radio" id="fastFood_N" name="fastFood_N"><label for="fastFood_N">No</label>
+        </div>
+        <label for="folicle_no_R">Folicle No. (R):</label>
+        <input type="text" class="Age" placeholder="Folicle No. (R)" id="folicle_no_R" name="folicle_no_R">
+        
+        <label for="folicle_no_L">Folicle No. (L):</label>
+        <input type="text" class="Age" placeholder="Folicle No. (L)" id="folicle_no_L" name="folicle_no_L">
+        
+        <label for="cycle_r_i">Cycle (R/I):</label>
+        <input type="text" class="Age" placeholder="Cycle (R/I)" id="cycle_r_i" name="cycle_r_i">
+        
+        <label for="cycle_len_days">Cycle length(days):</label>
+        <input type="text" class="Age" placeholder="Cycle length(days)" id="cycle_len_days" name="cycle_len_days">
+        
+        <label for="amh_ng_ml">AMH(ng/mL):</label>
+        <input type="text" class="Age" placeholder="AMH(ng/mL)" id="amh_ng_ml" name="amh_ng_ml">
+        
+        <label for="fsh_lh">FSH/LH:</label>
+        <input type="text" class="Age" placeholder="FSH/LH" id="fsh_lh" name="fsh_lh">
+        
+        <label for="prl_ng_ml">PRL(ng/mL):</label>
+        <input type="text" class="Age" placeholder="PRL(ng/mL)" id="prl_ng_ml" name="prl_ng_ml">
+        
+        <label for="waist_hip_ratio">Waist:Hip Ratio:</label>
+        <input type="text" class="Age" placeholder="Waist:Hip Ratio" id="waist_hip_ratio" name="waist_hip_ratio">
+
+        <input type="submit" name="submit">
+
+    </form>
+    {% endblock main-content %}
+
+    {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/pcos.css' %}">
+    {% endblock %}
+<!--</body>
+
+</html>-->

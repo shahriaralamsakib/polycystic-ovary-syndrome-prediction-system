@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.contrib import messages
 import joblib
 from .forms import *
+from django.contrib.auth.models import User
 from django.contrib.auth.views import login_required
 from django.contrib.auth import login, logout, authenticate
 import pandas as pd
@@ -9,13 +11,24 @@ import pickle
 
 # Create your views here.
 
+
 def register(request):
     form = RegistrationForm()
     if request.method == "POST":
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('login_view')
+            username = form.cleaned_data['username']
+            
+            # Check if the username already exists
+            if User.objects.filter(username=username).exists():
+                messages.error(request, 'Username already exists. Please choose a different username.')
+            else:
+                form.save()
+                messages.success(request, 'Registration successful. You can now log in.')
+                return redirect('login_view')
+    error_messages = [message for message in messages.get_messages(request) if message.level == messages.ERROR]
+    success_messages = [message for message in messages.get_messages(request) if message.level == messages.SUCCESS]
+
     return render(request, "registration.html", {'form': form})
 
 def login_view(request):
@@ -28,7 +41,9 @@ def login_view(request):
             user = authenticate(request, username=us, password=ps)
             if user:
                 login(request, user)
-                return redirect('gap')
+                return redirect('pcos')
+            else:
+                messages.error(request, 'Invalid username or password. Please try again.')
     return render(request, 'login.html', {'form': form})
 
 def logout_form(request):

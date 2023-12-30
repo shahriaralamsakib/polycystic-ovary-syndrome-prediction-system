@@ -1,19 +1,77 @@
 body {
-    background-color: #e8f3f8;
+    background-color: rgb(254, 229, 229) !important;
     font: 1em/1.5 sans-seriff;
 }
 
-h1 {
+.navbar-brand{
+    color: black;
+}
+.nav-link{
+    color: black;
+}
+
+h3{
     text-align: center;
     font-size: 50px;
-    color: steelblue;
+    color: black;
+}
+h6{
+    text-align: center;
+    color: black;
+}
+.gap{
+    height: 50px;
+}
+
+.user_card {
+    width: 900px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: rgb(250, 205, 205);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+.form_container {
+    margin-top: 20px;
+}
+#form-title {
+    color: #fff;
 }
 
 form {
     margin: 18px auto;
     width: 320px;
-    color: steelblue;
+    color: rgb(0, 0, 0);
 }
+.styled-box {
+    background-color: #f5ecec;
+    border: 2px solid rgb(255, 83, 83);
+    padding: 1px;
+}
+.h{height: 5px;}
+
+.login_btn {
+    width: 100%;
+    background: rgb(254, 59, 59) !important;
+    color: white !important;
+}
+        
+.login_btn:focus {
+    box-shadow: none !important;
+   outline: 0px !important;
+}
+        
+.login_container {
+     padding: 0 2rem;
+}
+   
 
 input {
     padding: 8px;
@@ -24,8 +82,8 @@ input {
     display: block;
     margin-bottom: 20px;
     width: 100%;
-    border: 2px solid steelblue;
-    background-color: #FAF6D9;
+    border: 2px solid rgb(255, 83, 83);
+    background-color: #f5ecec;
 }
 
 input[type="radio"] {

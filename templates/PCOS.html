@@ -52,8 +52,8 @@
                 {% csrf_token %}
                 <div class="styled-box">
                     <h6>Skin Darkening</h6>
-                    <input type="radio" id="skin_d_Y" name="skin_d_Y"><label for="skin_d_Y">Yes</label>
-                    <input type="radio" id="skin_d_N" name="skin_d_N"><label for="skin_d_N">No</label>
+                    <input type="radio" id="skin_d_Y" name="skin_d_Y" onclick="uncheckOther(this)"><label for="skin_d_Y">Yes</label>
+                    <input type="radio" id="skin_d_N" name="skin_d_N" onclick="uncheckOther(this)"><label for="skin_d_N">No</label>
                 </div>
                 <div class="h"></div>
                 <div class="styled-box">
@@ -103,6 +103,17 @@
         </div>
     </div>
 </div>
+
+<script>
+  function uncheckOther(clickedRadio) {
+      var radios = document.getElementsByName(clickedRadio.name);
+      for (var i = 0; i < radios.length; i++) {
+          if (radios[i] !== clickedRadio) {
+              radios[i].checked = false;
+          }
+      }
+  }
+  </script>
 </body>
 
 </html>

@@ -104,3 +104,13 @@ h3{
     font-weight: bold;
     color: #fb0400;
 }
+.footer {
+    background-color: #333; /* Charcoal black background */
+    color: white; /* White text color */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

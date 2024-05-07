@@ -12,22 +12,43 @@ import pickle
 # Create your views here.
 
 
+# def register(request):
+#     form = RegistrationForm()
+#     if request.method == "POST":
+#         form = RegistrationForm(request.POST)
+#         if form.is_valid():
+#             username = form.cleaned_data['username']
+            
+#             # Check if the username already exists
+#             if User.objects.filter(username=username).exists():
+#                 messages.error(request, 'Username already exists. Please choose a different username.')
+#             else:
+#                 form.save()
+#                 messages.success(request, 'Registration successful. You can now log in.')
+#                 return redirect('login_view')
+#         error_messages = [message for message in messages.get_messages(request) if message.level == messages.ERROR]
+#         success_messages = [message for message in messages.get_messages(request) if message.level == messages.SUCCESS]
+#         print(error_messages)
+#         print(success_messages)
+
+#     return render(request, "registration.html", {'form': form})
+def home(request):
+    return render(request, "home.html")
+
+def about(request):
+    return render(request, "about.html")
+
 def register(request):
-    form = RegistrationForm()
     if request.method == "POST":
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
-            
-            # Check if the username already exists
-            if User.objects.filter(username=username).exists():
-                messages.error(request, 'Username already exists. Please choose a different username.')
-            else:
-                form.save()
-                messages.success(request, 'Registration successful. You can now log in.')
-                return redirect('login_view')
-    error_messages = [message for message in messages.get_messages(request) if message.level == messages.ERROR]
-    success_messages = [message for message in messages.get_messages(request) if message.level == messages.SUCCESS]
+            form.save()
+            messages.success(request, 'Registration successful. You can now log in.')
+            return redirect('login_view')
+        else:
+            messages.error(request, 'Registration failed. Invalid Information or Password')
+    else:
+        form = RegistrationForm()
 
     return render(request, "registration.html", {'form': form})
 

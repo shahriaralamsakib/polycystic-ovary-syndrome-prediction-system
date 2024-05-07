@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Login{% endblock %}
+{% block css %}
+
+    <!-- Default CSS link if no override provided -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" >
+
+{% endblock %}
+{% block main-content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+              <div class="text">
+                <h2>What is Polycystic ovary syndrome?</h2>
+                <p>Polycystic ovary syndrome (PCOS) is a condition in which the ovaries produce an abnormal amount of androgens, male sex hormones that are usually present in women in small amounts. The name polycystic ovary syndrome describes the numerous small cysts (fluid-filled sacs) that form in the ovaries. However, some women with this disorder do not have cysts, while some women without the disorder do develop cysts. Source: Johns Hopkins Medicine</p>
+                <a href="https://www.hopkinsmedicine.org/health/conditions-and-diseases/polycystic-ovary-syndrome-pcos#:~:text=Polycystic%20ovary%20syndrome%20(PCOS)%20is,that%20form%20in%20the%20ovaries.">Know more</a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="image">
+                <img class="image" src="{% static 'image/ovary.jpg' %}" alt="Image Divider">
+              </div>
+            </div>
+          </div>
+    </div>
+
+{% endblock main-content %}

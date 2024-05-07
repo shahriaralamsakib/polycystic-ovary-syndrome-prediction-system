@@ -5,18 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Polycystic Ovary Syndrome Prediction System{% endblock %}</title>
+    {% block css %}
+
+    <!-- Default CSS link if no override provided -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" >
+
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" >
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="{% static 'css/common.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>{% block title %} {% endblock title %}</title>
-    {% block extra_css %}{% endblock %}
-</head>
-<body>
 
-    <nav class="navbar navbar-expand-lg" style="background-color: azure;">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'image/roc.ico' %}" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(250, 159, 159);">
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'login_view' %}">Polycystic Ovary Syndrome Prediction System</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,13 +36,16 @@
             <ul class="nav justify-content-end">
                 
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'login_view' %}">Home</a>
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="{% url 'about' %}">About Us</a>
               </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'pcos' %}">Predict Now</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login_view' %}">Login</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'registration' %}">Registration</a>
@@ -54,6 +67,12 @@
     {% block content2 %}
     
     {% endblock content2 %}
-    
+    <footer class="footer">
+      <p>Md. Shahriar Alam Sakib</p>
+      <p>Your City, State, Zip</p>
+      <p>shahriaralamsakib7039@gmail.com</p>
+      <p>+1234567890</p>
+      <p>&copy; 2024 Sakib. All rights reserved.</p>
+    </footer>
 </body>
 </html>

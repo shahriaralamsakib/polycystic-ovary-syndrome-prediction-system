@@ -62,3 +62,30 @@ html {
     box-shadow: none !important;
     outline: 0px !important;
 }
+
+.messages-container {
+    text-align: center;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px auto;
+    max-width: 800px;
+    position: relative;
+    display: table;
+}
+.error_messages{
+    text-align: center;
+    height: 50px;
+    width: 500px;
+    border-radius: 10px;
+    /* background-color: rgba(255, 0, 0, 0.2); */
+    color: #ff0400;
+    border-color: #ff0400;
+}
+.success_messages{
+    height: 50px;
+    width: 500px;
+    border-radius: 10px;
+    /* background-color: rgba(0, 136, 7, 0.5); */
+    color: #007e2e;
+    border-color: #007e2e;
+}

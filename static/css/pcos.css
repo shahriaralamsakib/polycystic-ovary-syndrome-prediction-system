@@ -10,6 +10,16 @@ body {
     color: black;
 }
 
+.nav-link:hover{
+    color: #ffffff;
+}
+
+.nav-item:hover{
+    background-color: rgb(249, 95, 95);
+    border-radius: 10px;
+    color: #ffffff;
+}
+
 h3{
     text-align: center;
     font-size: 50px;
@@ -109,4 +119,15 @@ input:focus {
 input[type="radio"]:checked+label {
     font-weight: bold;
     font-size: 18px;
+}
+
+.footer {
+    background-color: #333; /* Charcoal black background */
+    color: white; /* White text color */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }

@@ -16,6 +16,16 @@ html {
     color: black;
 }
 
+.nav-link:hover{
+    color: #ffffff;
+}
+
+.nav-item:hover{
+    background-color: rgb(249, 95, 95);
+    border-radius: 10px;
+    color: #ffffff;
+}
+
 h3{
     text-align: center;
     color: black;

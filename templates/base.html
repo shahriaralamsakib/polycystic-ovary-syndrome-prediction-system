@@ -41,15 +41,24 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'about' %}">About Us</a>
               </li>
+              {% if user.is_authenticated %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'pcos' %}">Predict Now</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'profile' %}">{{ user.username | title }}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">logout</a>
+                </li>
+                {% else %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'login_view' %}">Login</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'registration' %}">Registration</a>
                 </li>
+                {% endif %}
               </ul>
           </div>
         </div>

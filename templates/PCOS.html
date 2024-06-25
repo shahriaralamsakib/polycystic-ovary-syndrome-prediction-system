@@ -21,12 +21,14 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="nav justify-content-end">
-            
           <li class="nav-item">
             <a class="nav-link" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'about' %}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'research' %}">Research Paper</a>
           </li>
           {% if user.is_authenticated %}
             <li class="nav-item">
@@ -64,26 +66,26 @@
                 {% csrf_token %}
                 <div class="styled-box">
                     <h6>Skin Darkening</h6>
-                    <input type="radio" id="skin_d_Y" name="skin_d_Y" onclick="uncheckOther(this)"><label for="skin_d_Y">Yes</label>
-                    <input type="radio" id="skin_d_N" name="skin_d_N" onclick="uncheckOther(this)"><label for="skin_d_N">No</label>
+                    <input type="radio" id="skin_d_Y" name="skin_d" onclick="uncheckOther(this)"><label for="skin_d_Y">Yes</label>
+                    <input type="radio" id="skin_d_N" name="skin_d" onclick="uncheckOther(this)"><label for="skin_d_N">No</label>
                 </div>
                 <div class="h"></div>
                 <div class="styled-box">
                     <h6>Hair Growth</h6>
-                    <input type="radio" id="hair_g_Y" name="hair_g_Y"><label for="hair_g_Y">Yes</label>
-                    <input type="radio" id="hair_g_N" name="hair_g_N"><label for="hair_g_N">No</label>
+                    <input type="radio" id="hair_g_Y" name="hair_g"><label for="hair_g_Y">Yes</label>
+                    <input type="radio" id="hair_g_N" name="hair_g"><label for="hair_g_N">No</label>
                 </div>
                 <div class="h"></div>
                 <div class="styled-box">
                     <h6>Weight Gain</h6>
-                    <input type="radio" id="weight_Y" name="weight_Y"><label for="weight_Y">Yes</label>
-                    <input type="radio" id="weight_N" name="weight_N"><label for="weight_N">No</label>
+                    <input type="radio" id="weight_Y" name="weight"><label for="weight_Y">Yes</label>
+                    <input type="radio" id="weight_N" name="weight"><label for="weight_N">No</label>
                 </div>
                 <div class="h"></div>
                 <div class="styled-box ">
                     <h6>Fast Food</h6>
-                    <input type="radio" id="fastFood_Y" name="fastFood_Y"><label for="fastFood_Y">Yes</label>
-                    <input type="radio" id="fastFood_N" name="fastFood_N"><label for="fastFood_N">No</label>
+                    <input type="radio" id="fastFood_Y" name="fastFood"><label for="fastFood_Y">Yes</label>
+                    <input type="radio" id="fastFood_N" name="fastFood"><label for="fastFood_N">No</label>
                 </div>
                 <label for="folicle_no_R">Folicle No. (R):</label>
                 <input type="text" class="Age" placeholder="Folicle No. (R)" id="folicle_no_R" name="folicle_no_R">

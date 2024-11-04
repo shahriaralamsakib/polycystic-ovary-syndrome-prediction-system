@@ -46,7 +46,7 @@ COPY --from=builder /app /app
 EXPOSE 8000
 
 # Collect static files (if needed)
-RUN python manage.py collectstatic --noinput
+RUN python /app/manage.py collectstatic --noinput
 
 # Run the Django server
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "myproject.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "PCOS.wsgi:application"]
